@@ -103,20 +103,20 @@
 		0EAB0DED1F924FD400D3E430 /* AutoLaunchHelper */ = {
 			isa = PBXGroup;
 			children = (
-				0EC518BB1F9256B1003000AD /* New Group */,
+				0EC518BB1F9256B1003000AD /* Application */,
 				0EC518BC1F9256B5003000AD /* Supporting Files */,
 			);
 			path = AutoLaunchHelper;
 			sourceTree = "<group>";
 		};
-		0EC518BB1F9256B1003000AD /* New Group */ = {
+		0EC518BB1F9256B1003000AD /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				0EAB0DEE1F924FD400D3E430 /* AppDelegate.swift */,
 				0EC518BD1F925975003000AD /* Assets.xcassets */,
 				0EAB0DF41F924FD400D3E430 /* Main.storyboard */,
 			);
-			path = "New Group";
+			path = Application;
 			sourceTree = "<group>";
 		};
 		0EC518BC1F9256B5003000AD /* Supporting Files */ = {
