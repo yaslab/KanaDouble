@@ -23,11 +23,17 @@ class KeyboardEventService {
     
     func start() {
         let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue(): true]
-        if AXIsProcessTrustedWithOptions(options as CFDictionary) {
-            _start()
+        guard AXIsProcessTrustedWithOptions(options as CFDictionary) else {
+            startTimerToMonitorProcessTrust { [weak self] in
+                self?.startMonitoringKeyboardEvents()
+            }
             return
         }
-
+        
+        startMonitoringKeyboardEvents()
+    }
+    
+    private func startTimerToMonitorProcessTrust(_ handler: @escaping () -> Void) {
         let label = "net.yaslab.KanaDouble.KeyboardEventService.timer"
         let timerQueue = DispatchQueue(label: label)
         let timer = DispatchSource.makeTimerSource(queue: timerQueue)
@@ -38,15 +44,17 @@ class KeyboardEventService {
                 if let `self` = self {
                     self.timer?.cancel()
                     self.timer = nil
-                    self._start()
+                    handler()
                 }
             }
         }
         timer.resume()
     }
     
-    private func _start() {
-        precondition(self.event == nil)
+    private func startMonitoringKeyboardEvents() {
+        if self.event != nil {
+            fatalError()
+        }
         
         let eventsOfInterest: [CGEventType] = [.keyDown, .keyUp, .flagsChanged]
         let callback: CGEventTapCallBack = { (proxy, type, event, refcon) in
@@ -64,9 +72,11 @@ class KeyboardEventService {
             callback: callback,
             userInfo: unsafeBitCast(self, to: UnsafeMutableRawPointer.self)
         )
+        
         guard let event = self.event else {
             fatalError()
         }
+        
         queue.async {
             let runLoop = CFRunLoopGetCurrent()
             let source = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, event, 0)
@@ -76,7 +86,7 @@ class KeyboardEventService {
         }
     }
 
-    // MARK: - Keyboard events
+    // MARK: - Event handler
     
     private func handleEvent(type: CGEventType, event: CGEvent) -> CGEvent? {
         switch type {
@@ -90,6 +100,8 @@ class KeyboardEventService {
             return event
         }
     }
+    
+    // MARK: - Keyboard events
     
     private func onKeyDown(_ event: CGEvent) -> CGEvent? {
         lastFlagsChangeDate = nil
@@ -106,7 +118,7 @@ class KeyboardEventService {
             let now = Date()
             if let lastDate = lastFlagsChangeDate {
                 // DEBUG
-                print(now.timeIntervalSince(lastDate))
+                //print(now.timeIntervalSince(lastDate))
                 
                 let future1 = lastDate.addingTimeInterval(0.25)
                 let future2 = lastDate.addingTimeInterval(0.50)
