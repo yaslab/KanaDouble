@@ -114,14 +114,19 @@ class KeyboardEventService {
     }
     
     private func onFlagsChanged(_ event: CGEvent) -> CGEvent? {
-        if event.flags.contains(.maskCommand) {
+        let modifierFlag = CGEventFlags(rawValue: UInt64(UserDefaults.standard.integer(forKey: .udModifierFlag)))
+        
+        if event.flags.contains(modifierFlag) {
             let now = Date()
             if let lastDate = lastFlagsChangeDate {
                 // DEBUG
-                //print(now.timeIntervalSince(lastDate))
+                print(now.timeIntervalSince(lastDate))
                 
-                let future1 = lastDate.addingTimeInterval(0.25)
-                let future2 = lastDate.addingTimeInterval(0.50)
+                let boundary = UserDefaults.standard.double(forKey: .udBoundary)
+                let timeout = UserDefaults.standard.double(forKey: .udTimeout)
+                
+                let future1 = lastDate.addingTimeInterval(boundary)
+                let future2 = lastDate.addingTimeInterval(timeout)
                 if lastDate <= now && now < future1 {
                     CGEvent.postKeyDownUpEvent(virtualKey: .vkJISEisu)
                     lastFlagsChangeDate = nil

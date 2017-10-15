@@ -19,6 +19,7 @@
 		0EB0296D1F91B49E005F9CAC /* CGKeyCode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0296C1F91B49E005F9CAC /* CGKeyCode+Extension.swift */; };
 		0EB029711F9201A5005F9CAC /* StatusItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB029701F9201A5005F9CAC /* StatusItemManager.swift */; };
 		0EC518BE1F925975003000AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC518BD1F925975003000AD /* Assets.xcassets */; };
+		0ED76BA81F934206007B73C9 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED76BA71F934206007B73C9 /* ContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +53,7 @@
 		0EB0296C1F91B49E005F9CAC /* CGKeyCode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGKeyCode+Extension.swift"; sourceTree = "<group>"; };
 		0EB029701F9201A5005F9CAC /* StatusItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemManager.swift; sourceTree = "<group>"; };
 		0EC518BD1F925975003000AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0ED76BA71F934206007B73C9 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				0E643F961F90FD5A00A43932 /* Main.storyboard */,
 				0EB029701F9201A5005F9CAC /* StatusItemManager.swift */,
 				0E643F921F90FD5A00A43932 /* ViewController.swift */,
+				0ED76BA71F934206007B73C9 /* ContainerView.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				0EB0296D1F91B49E005F9CAC /* CGKeyCode+Extension.swift in Sources */,
 				0E643F931F90FD5A00A43932 /* ViewController.swift in Sources */,
+				0ED76BA81F934206007B73C9 /* ContainerView.swift in Sources */,
 				0E643FA31F90FD9400A43932 /* KeyboardEventService.swift in Sources */,
 				0EB029711F9201A5005F9CAC /* StatusItemManager.swift in Sources */,
 				0E643F911F90FD5A00A43932 /* AppDelegate.swift in Sources */,

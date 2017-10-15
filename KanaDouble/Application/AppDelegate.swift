@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var windowController: NSWindowController?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        UserDefaults.standard.register(defaults: [.udModifierFlag: CGEventFlags.maskCommand.rawValue, .udBoundary: 0.25, .udTimeout: 0.50])
         StatusItemManager.shared.setup()
         KeyboardEventService.shared.start()
         _ = SMLoginItemSetEnabled(kHelperAppBundleIdentifier as CFString, true)
