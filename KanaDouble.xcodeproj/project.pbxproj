@@ -12,6 +12,8 @@
 		0E643F951F90FD5A00A43932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E643F941F90FD5A00A43932 /* Assets.xcassets */; };
 		0E643F981F90FD5A00A43932 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E643F961F90FD5A00A43932 /* Main.storyboard */; };
 		0E643FA31F90FD9400A43932 /* KeyboardEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E643FA21F90FD9400A43932 /* KeyboardEventService.swift */; };
+		0E8AB8981F965B120048FA63 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8AB8971F965B120048FA63 /* UserDefaults+Extension.swift */; };
+		0E8AB89A1F965B8E0048FA63 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8AB8991F965B8E0048FA63 /* UserDefaultsKeys.swift */; };
 		0EAB0DEF1F924FD400D3E430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAB0DEE1F924FD400D3E430 /* AppDelegate.swift */; };
 		0EAB0DF61F924FD400D3E430 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAB0DF41F924FD400D3E430 /* Main.storyboard */; };
 		0EAB0DFD1F9250A400D3E430 /* AutoLaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0EAB0DEC1F924FD400D3E430 /* AutoLaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -44,6 +46,8 @@
 		0E643F991F90FD5A00A43932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E643F9A1F90FD5A00A43932 /* KanaDouble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KanaDouble.entitlements; sourceTree = "<group>"; };
 		0E643FA21F90FD9400A43932 /* KeyboardEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardEventService.swift; sourceTree = "<group>"; };
+		0E8AB8971F965B120048FA63 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		0E8AB8991F965B8E0048FA63 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		0EAB0DEC1F924FD400D3E430 /* AutoLaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EAB0DEE1F924FD400D3E430 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EAB0DF51F924FD400D3E430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				0EB029701F9201A5005F9CAC /* StatusItemManager.swift */,
 				0E643F921F90FD5A00A43932 /* ViewController.swift */,
 				0ED76BA71F934206007B73C9 /* ContainerView.swift */,
+				0E8AB8971F965B120048FA63 /* UserDefaults+Extension.swift */,
+				0E8AB8991F965B8E0048FA63 /* UserDefaultsKeys.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -265,13 +271,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EB0296B1F91A9FC005F9CAC /* CGEvent+Extension.swift in Sources */,
 				0EB0296D1F91B49E005F9CAC /* CGKeyCode+Extension.swift in Sources */,
-				0E643F931F90FD5A00A43932 /* ViewController.swift in Sources */,
+				0E8AB8981F965B120048FA63 /* UserDefaults+Extension.swift in Sources */,
+				0E8AB89A1F965B8E0048FA63 /* UserDefaultsKeys.swift in Sources */,
 				0ED76BA81F934206007B73C9 /* ContainerView.swift in Sources */,
+				0E643F931F90FD5A00A43932 /* ViewController.swift in Sources */,
 				0E643FA31F90FD9400A43932 /* KeyboardEventService.swift in Sources */,
 				0EB029711F9201A5005F9CAC /* StatusItemManager.swift in Sources */,
 				0E643F911F90FD5A00A43932 /* AppDelegate.swift in Sources */,
-				0EB0296B1F91A9FC005F9CAC /* CGEvent+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

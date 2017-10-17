@@ -114,7 +114,7 @@ class KeyboardEventService {
     }
     
     private func onFlagsChanged(_ event: CGEvent) -> CGEvent? {
-        let modifierFlag = CGEventFlags(rawValue: UInt64(UserDefaults.standard.integer(forKey: .udModifierFlag)))
+        let modifierFlag = CGEventFlags(rawValue: UInt64(UserDefaults.standard[.modifierFlag]))
         
         if event.flags.contains(modifierFlag) {
             let now = Date()
@@ -122,8 +122,8 @@ class KeyboardEventService {
                 // DEBUG
                 print(now.timeIntervalSince(lastDate))
                 
-                let boundary = UserDefaults.standard.double(forKey: .udBoundary)
-                let timeout = UserDefaults.standard.double(forKey: .udTimeout)
+                let boundary = UserDefaults.standard[.boundary]
+                let timeout = UserDefaults.standard[.timeout]
                 
                 let future1 = lastDate.addingTimeInterval(boundary)
                 let future2 = lastDate.addingTimeInterval(timeout)

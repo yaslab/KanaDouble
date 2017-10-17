@@ -3,7 +3,7 @@
 //  KanaDouble
 //
 //  Created by Yasuhiro Hatta on 2017/10/15.
-//  Copyright © 2017年 yaslab. All rights reserved.
+//  Copyright © 2017 yaslab. All rights reserved.
 //
 
 import Cocoa
