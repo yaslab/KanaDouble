@@ -6,88 +6,78 @@
 //  Copyright © 2017 yaslab. All rights reserved.
 //
 
+@preconcurrency import ApplicationServices
+import Carbon.HIToolbox
 import Cocoa
+import CoreGraphics
+import Foundation
+import Observation
 
+@Observable
 class KeyboardEventService {
+    private let store: UserDefaults
 
-    static let shared = KeyboardEventService()
-    
-    private let queue = DispatchQueue(label: "net.yaslab.KanaDouble.KeyboardEventService.queue")
-    private var event: CFMachPort?
-    
-    private var lastFlagsChangeDate: Date?
-    
-    private var timer: DispatchSourceTimer?
-    
-    private init() {}
-    
-    func start() {
-        let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue(): true]
-        guard AXIsProcessTrustedWithOptions(options as CFDictionary) else {
-            startTimerToMonitorProcessTrust { [weak self] in
-                self?.startMonitoringKeyboardEvents()
-            }
-            return
-        }
-        
-        startMonitoringKeyboardEvents()
+    init(store: UserDefaults) {
+        self.store = store
     }
-    
-    private func startTimerToMonitorProcessTrust(_ handler: @escaping () -> Void) {
-        let label = "net.yaslab.KanaDouble.KeyboardEventService.timer"
-        let timerQueue = DispatchQueue(label: label)
-        let timer = DispatchSource.makeTimerSource(queue: timerQueue)
-        self.timer = timer
-        timer.schedule(deadline: .now(), repeating: .seconds(5), leeway: .milliseconds(100))
-        timer.setEventHandler { [weak self] in
-            if AXIsProcessTrusted() {
-                if let `self` = self {
-                    self.timer?.cancel()
-                    self.timer = nil
-                    handler()
-                }
-            }
-        }
-        timer.resume()
-    }
-    
-    private func startMonitoringKeyboardEvents() {
-        if self.event != nil {
-            fatalError()
-        }
-        
+
+    private(set) var isTapEnabled: Bool = false
+
+    @ObservationIgnored
+    private lazy var tap: CFMachPort = {
         let eventsOfInterest: [CGEventType] = [.keyDown, .keyUp, .flagsChanged]
-        let callback: CGEventTapCallBack = { (proxy, type, event, refcon) in
-            let `self` = unsafeBitCast(refcon, to: KeyboardEventService.self)
+        let callback: CGEventTapCallBack = { _, type, event, context in
+            let `self` = unsafeBitCast(context, to: KeyboardEventService.self)
             guard let converted = self.handleEvent(type: type, event: event) else {
                 return nil
             }
             return Unmanaged.passUnretained(converted)
         }
-        self.event = CGEvent.tapCreate(
+        let _tap = CGEvent.tapCreate(
             tap: .cgSessionEventTap,
             place: .headInsertEventTap,
             options: .defaultTap,
             eventsOfInterest: eventsOfInterest.reduce(0) { $0 | (1 << $1.rawValue) },
             callback: callback,
             userInfo: unsafeBitCast(self, to: UnsafeMutableRawPointer.self)
+        )!
+        CFRunLoopAddSource(
+            CFRunLoopGetCurrent(),  // Current is always the @MainActor
+            CFMachPortCreateRunLoopSource(nil, _tap, 0),
+            .commonModes
         )
-        
-        guard let event = self.event else {
-            fatalError()
-        }
-        
-        queue.async {
-            let runLoop = CFRunLoopGetCurrent()
-            let source = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, event, 0)
-            CFRunLoopAddSource(runLoop, source, .commonModes)
-            CGEvent.tapEnable(tap: event, enable: true)
-            CFRunLoopRun()
-        }
-    }
+        return _tap
+    }()
 
+    @ObservationIgnored
+    private var keyDownTime: TimeInterval?
+
+    @ObservationIgnored
+    private var keyDown_2: (count: Int, keyDownTime: TimeInterval)?
+
+    func start() async throws {
+        let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue(): true]
+        if AXIsProcessTrustedWithOptions(options as CFDictionary) == false {
+            repeat {
+                // DEBUG
+                print("Trusted = false")
+
+                try await Task.sleep(for: .seconds(2.5))
+            } while AXIsProcessTrusted() == false
+        }
+
+        // DEBUG
+        print("Trusted = true")
+
+        CGEvent.tapEnable(tap: tap, enable: true)
+
+        isTapEnabled = true
+    }
+}
+
+extension KeyboardEventService {
     // MARK: - Event handler
-    
+
     private func handleEvent(type: CGEventType, event: CGEvent) -> CGEvent? {
         switch type {
         case .keyDown:
@@ -100,47 +90,138 @@ class KeyboardEventService {
             return event
         }
     }
-    
+
     // MARK: - Keyboard events
-    
+
     private func onKeyDown(_ event: CGEvent) -> CGEvent? {
-        lastFlagsChangeDate = nil
+        // DEBUG
+        print("key down: 0x\(String(event.getIntegerValueField(.keyboardEventKeycode), radix: 16))")
+
+        keyDownTime = nil
         return event
     }
-    
+
     private func onKeyUp(_ event: CGEvent) -> CGEvent? {
-        lastFlagsChangeDate = nil
+        // DEBUG
+        print("key up: 0x\(String(event.getIntegerValueField(.keyboardEventKeycode), radix: 16))")
+
+        //keyDownTime = nil
         return event
     }
-    
+
     private func onFlagsChanged(_ event: CGEvent) -> CGEvent? {
-        let modifierFlag = CGEventFlags(rawValue: UInt64(UserDefaults.standard[.modifierFlag]))
-        
-        if event.flags.contains(modifierFlag) {
-            let now = Date()
-            if let lastDate = lastFlagsChangeDate {
-                // DEBUG
-                print(now.timeIntervalSince(lastDate))
-                
-                let boundary = UserDefaults.standard[.boundary]
-                let timeout = UserDefaults.standard[.timeout]
-                
-                let future1 = lastDate.addingTimeInterval(boundary)
-                let future2 = lastDate.addingTimeInterval(timeout)
-                if lastDate <= now && now < future1 {
-                    CGEvent.postKeyDownUpEvent(virtualKey: .vkJISEisu)
-                    lastFlagsChangeDate = nil
-                } else if future1 <= now && now < future2 {
-                    CGEvent.postKeyDownUpEvent(virtualKey: .vkJISKana)
-                    lastFlagsChangeDate = nil
-                } else {
-                    lastFlagsChangeDate = now
+        let keycode = event.getIntegerValueField(.keyboardEventKeycode)
+        let mask: CGEventFlags
+
+        switch Int(keycode) {
+        case kVK_Command, kVK_Command:
+            mask = .maskCommand
+        case kVK_Control, kVK_Control:
+            mask = .maskControl
+        case kVK_Option, kVK_RightOption:
+            mask = .maskAlternate
+        case kVK_Shift, kVK_RightShift:
+            mask = .maskShift
+        default:
+            return event
+        }
+
+        if event.flags.contains(mask) {
+            // down
+            onTargetKeyDown(mask: mask, event)
+        } else {
+            // up
+            onTargetKeyUp(mask: mask, event)
+        }
+
+        return event
+    }
+
+    private func onTargetKeyDown(mask: CGEventFlags, _ event: CGEvent) {
+        let modifierKey = store.modifierKey
+
+        // DEBUG
+        print("key down *: 0x\(String(event.getIntegerValueField(.keyboardEventKeycode), radix: 16))")
+
+        // Long Press
+        if mask.contains(modifierKey.flag) {
+            let now = event.timeInterval
+            keyDownTime = now
+        }
+
+        // Double Tap
+        if mask.contains(modifierKey.flag) {
+            let now = event.timeInterval
+
+            //let boundary = store.boundary
+            let timeout = store.timeout
+
+            if let (count, keyDownTime) = keyDown_2 {
+                if count == 1 {
+                    keyDown_2 = (2, keyDownTime)
                 }
             } else {
-                lastFlagsChangeDate = now
+                keyDown_2 = (1, now)
+
+                Task {
+                    try await Task.sleep(for: .seconds(timeout))
+                    keyDown_2 = nil
+                }
             }
         }
-        return event
     }
-    
+
+    private func onTargetKeyUp(mask: CGEventFlags, _ event: CGEvent) {
+        let modifierKey = store.modifierKey
+
+        // DEBUG
+        print("key up *: 0x\(String(event.getIntegerValueField(.keyboardEventKeycode), radix: 16))")
+
+        // Long Press
+        if mask.contains(modifierKey.flag), let keyDownTime {
+            let now = event.timeInterval
+
+            // DEBUG
+            print("  \(now - keyDownTime)")
+
+            let boundary = store.boundary
+            let timeout = store.timeout
+
+            if now < (keyDownTime + boundary) {
+                CGEvent.postKeyDownUpEvent(virtualKey: kVK_JIS_Eisu)
+            } else if now < (keyDownTime + timeout) {
+                CGEvent.postKeyDownUpEvent(virtualKey: kVK_JIS_Kana)
+            }
+
+            self.keyDownTime = nil
+        }
+
+        // Double Tap
+        if mask.contains(modifierKey.flag), let (count, keyDownTime) = keyDown_2 {
+            // DEBUG
+            print("double tap: \(count)")
+
+            if count == 2 {
+                let now = event.timeInterval
+
+                //let boundary = store.boundary
+                let timeout = store.timeout
+
+                // DEBUG
+                print("  * \(now - keyDownTime)")
+
+                if now < (keyDownTime + timeout) {
+                    let wk = NSWorkspace.shared
+                    if let url = wk.urlForApplication(withBundleIdentifier: "com.apple.apps.launcher") {
+                        wk.openApplication(
+                            at: url,
+                            configuration: NSWorkspace.OpenConfiguration()
+                        )
+                    }
+                }
+
+                self.keyDown_2 = nil
+            }
+        }
+    }
 }

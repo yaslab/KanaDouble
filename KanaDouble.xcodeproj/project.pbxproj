@@ -3,72 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		0E643F911F90FD5A00A43932 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E643F901F90FD5A00A43932 /* AppDelegate.swift */; };
-		0E643F931F90FD5A00A43932 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E643F921F90FD5A00A43932 /* ViewController.swift */; };
-		0E643F951F90FD5A00A43932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E643F941F90FD5A00A43932 /* Assets.xcassets */; };
-		0E643F981F90FD5A00A43932 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E643F961F90FD5A00A43932 /* Main.storyboard */; };
-		0E643FA31F90FD9400A43932 /* KeyboardEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E643FA21F90FD9400A43932 /* KeyboardEventService.swift */; };
-		0E8AB8981F965B120048FA63 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8AB8971F965B120048FA63 /* UserDefaults+Extension.swift */; };
-		0E8AB89A1F965B8E0048FA63 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8AB8991F965B8E0048FA63 /* UserDefaultsKeys.swift */; };
-		0EAB0DEF1F924FD400D3E430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAB0DEE1F924FD400D3E430 /* AppDelegate.swift */; };
-		0EAB0DF61F924FD400D3E430 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAB0DF41F924FD400D3E430 /* Main.storyboard */; };
-		0EAB0DFD1F9250A400D3E430 /* AutoLaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0EAB0DEC1F924FD400D3E430 /* AutoLaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0EB0296B1F91A9FC005F9CAC /* CGEvent+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0296A1F91A9FC005F9CAC /* CGEvent+Extension.swift */; };
-		0EB0296D1F91B49E005F9CAC /* CGKeyCode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0296C1F91B49E005F9CAC /* CGKeyCode+Extension.swift */; };
-		0EB029711F9201A5005F9CAC /* StatusItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB029701F9201A5005F9CAC /* StatusItemManager.swift */; };
-		0EC518BE1F925975003000AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC518BD1F925975003000AD /* Assets.xcassets */; };
-		0ED76BA81F934206007B73C9 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED76BA71F934206007B73C9 /* ContainerView.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		0EAB0DFC1F92508900D3E430 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Contents/Library/LoginItems;
-			dstSubfolderSpec = 1;
-			files = (
-				0EAB0DFD1F9250A400D3E430 /* AutoLaunchHelper.app in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		0E643F8D1F90FD5A00A43932 /* KanaDouble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanaDouble.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E643F901F90FD5A00A43932 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E643F921F90FD5A00A43932 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0E643F941F90FD5A00A43932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0E643F971F90FD5A00A43932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0E643F991F90FD5A00A43932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E643F9A1F90FD5A00A43932 /* KanaDouble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KanaDouble.entitlements; sourceTree = "<group>"; };
-		0E643FA21F90FD9400A43932 /* KeyboardEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardEventService.swift; sourceTree = "<group>"; };
-		0E8AB8971F965B120048FA63 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
-		0E8AB8991F965B8E0048FA63 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
-		0EAB0DEC1F924FD400D3E430 /* AutoLaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EAB0DEE1F924FD400D3E430 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0EAB0DF51F924FD400D3E430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0EAB0DF71F924FD400D3E430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0EAB0DF81F924FD400D3E430 /* AutoLaunchHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoLaunchHelper.entitlements; sourceTree = "<group>"; };
-		0EB0296A1F91A9FC005F9CAC /* CGEvent+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGEvent+Extension.swift"; sourceTree = "<group>"; };
-		0EB0296C1F91B49E005F9CAC /* CGKeyCode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGKeyCode+Extension.swift"; sourceTree = "<group>"; };
-		0EB029701F9201A5005F9CAC /* StatusItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemManager.swift; sourceTree = "<group>"; };
-		0EC518BD1F925975003000AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0ED76BA71F934206007B73C9 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		0EA2426F2F931EA100FFF49E /* KanaDouble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanaDouble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		0E643F8A1F90FD5A00A43932 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		0EA242712F931EA100FFF49E /* KanaDouble */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = KanaDouble;
+			sourceTree = "<group>";
 		};
-		0EAB0DE91F924FD400D3E430 /* Frameworks */ = {
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0EA2426C2F931EA100FFF49E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,255 +29,118 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E643F841F90FD5A00A43932 = {
+		0EA242662F931EA100FFF49E = {
 			isa = PBXGroup;
 			children = (
-				0E643F8F1F90FD5A00A43932 /* KanaDouble */,
-				0EAB0DED1F924FD400D3E430 /* AutoLaunchHelper */,
-				0E643F8E1F90FD5A00A43932 /* Products */,
+				0EA242712F931EA100FFF49E /* KanaDouble */,
+				0EA242702F931EA100FFF49E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0E643F8E1F90FD5A00A43932 /* Products */ = {
+		0EA242702F931EA100FFF49E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0E643F8D1F90FD5A00A43932 /* KanaDouble.app */,
-				0EAB0DEC1F924FD400D3E430 /* AutoLaunchHelper.app */,
+				0EA2426F2F931EA100FFF49E /* KanaDouble.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		0E643F8F1F90FD5A00A43932 /* KanaDouble */ = {
-			isa = PBXGroup;
-			children = (
-				0EED37891F92329A00D8BB83 /* Application */,
-				0EED378A1F92331000D8BB83 /* KeyboardService */,
-				0EED378B1F9235AC00D8BB83 /* Supporting Files */,
-			);
-			path = KanaDouble;
-			sourceTree = "<group>";
-		};
-		0EAB0DED1F924FD400D3E430 /* AutoLaunchHelper */ = {
-			isa = PBXGroup;
-			children = (
-				0EC518BB1F9256B1003000AD /* Application */,
-				0EC518BC1F9256B5003000AD /* Supporting Files */,
-			);
-			path = AutoLaunchHelper;
-			sourceTree = "<group>";
-		};
-		0EC518BB1F9256B1003000AD /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				0EAB0DEE1F924FD400D3E430 /* AppDelegate.swift */,
-				0EC518BD1F925975003000AD /* Assets.xcassets */,
-				0EAB0DF41F924FD400D3E430 /* Main.storyboard */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
-		0EC518BC1F9256B5003000AD /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0EAB0DF71F924FD400D3E430 /* Info.plist */,
-				0EAB0DF81F924FD400D3E430 /* AutoLaunchHelper.entitlements */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0EED37891F92329A00D8BB83 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				0E643F901F90FD5A00A43932 /* AppDelegate.swift */,
-				0E643F941F90FD5A00A43932 /* Assets.xcassets */,
-				0E643F961F90FD5A00A43932 /* Main.storyboard */,
-				0EB029701F9201A5005F9CAC /* StatusItemManager.swift */,
-				0E643F921F90FD5A00A43932 /* ViewController.swift */,
-				0ED76BA71F934206007B73C9 /* ContainerView.swift */,
-				0E8AB8971F965B120048FA63 /* UserDefaults+Extension.swift */,
-				0E8AB8991F965B8E0048FA63 /* UserDefaultsKeys.swift */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
-		0EED378A1F92331000D8BB83 /* KeyboardService */ = {
-			isa = PBXGroup;
-			children = (
-				0EB0296A1F91A9FC005F9CAC /* CGEvent+Extension.swift */,
-				0EB0296C1F91B49E005F9CAC /* CGKeyCode+Extension.swift */,
-				0E643FA21F90FD9400A43932 /* KeyboardEventService.swift */,
-			);
-			path = KeyboardService;
-			sourceTree = "<group>";
-		};
-		0EED378B1F9235AC00D8BB83 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0E643F991F90FD5A00A43932 /* Info.plist */,
-				0E643F9A1F90FD5A00A43932 /* KanaDouble.entitlements */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0E643F8C1F90FD5A00A43932 /* KanaDouble */ = {
+		0EA2426E2F931EA100FFF49E /* KanaDouble */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0E643F9D1F90FD5A00A43932 /* Build configuration list for PBXNativeTarget "KanaDouble" */;
+			buildConfigurationList = 0EA2427A2F931EA100FFF49E /* Build configuration list for PBXNativeTarget "KanaDouble" */;
 			buildPhases = (
-				0E643F891F90FD5A00A43932 /* Sources */,
-				0E643F8A1F90FD5A00A43932 /* Frameworks */,
-				0E643F8B1F90FD5A00A43932 /* Resources */,
-				0EAB0DFC1F92508900D3E430 /* CopyFiles */,
+				0EA2426B2F931EA100FFF49E /* Sources */,
+				0EA2426C2F931EA100FFF49E /* Frameworks */,
+				0EA2426D2F931EA100FFF49E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				0EA242712F931EA100FFF49E /* KanaDouble */,
 			);
 			name = KanaDouble;
+			packageProductDependencies = (
+			);
 			productName = KanaDouble;
-			productReference = 0E643F8D1F90FD5A00A43932 /* KanaDouble.app */;
-			productType = "com.apple.product-type.application";
-		};
-		0EAB0DEB1F924FD400D3E430 /* AutoLaunchHelper */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0EAB0DFB1F924FD400D3E430 /* Build configuration list for PBXNativeTarget "AutoLaunchHelper" */;
-			buildPhases = (
-				0EAB0DE81F924FD400D3E430 /* Sources */,
-				0EAB0DE91F924FD400D3E430 /* Frameworks */,
-				0EAB0DEA1F924FD400D3E430 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AutoLaunchHelper;
-			productName = AutoLaunchHelper;
-			productReference = 0EAB0DEC1F924FD400D3E430 /* AutoLaunchHelper.app */;
+			productReference = 0EA2426F2F931EA100FFF49E /* KanaDouble.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0E643F851F90FD5A00A43932 /* Project object */ = {
+		0EA242672F931EA100FFF49E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = yaslab;
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
-					0E643F8C1F90FD5A00A43932 = {
-						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
-					};
-					0EAB0DEB1F924FD400D3E430 = {
-						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+					0EA2426E2F931EA100FFF49E = {
+						CreatedOnToolsVersion = 26.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 0E643F881F90FD5A00A43932 /* Build configuration list for PBXProject "KanaDouble" */;
-			compatibilityVersion = "Xcode 8.0";
+			buildConfigurationList = 0EA2426A2F931EA100FFF49E /* Build configuration list for PBXProject "KanaDouble" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 0E643F841F90FD5A00A43932;
-			productRefGroup = 0E643F8E1F90FD5A00A43932 /* Products */;
+			mainGroup = 0EA242662F931EA100FFF49E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0EA242702F931EA100FFF49E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0E643F8C1F90FD5A00A43932 /* KanaDouble */,
-				0EAB0DEB1F924FD400D3E430 /* AutoLaunchHelper */,
+				0EA2426E2F931EA100FFF49E /* KanaDouble */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0E643F8B1F90FD5A00A43932 /* Resources */ = {
+		0EA2426D2F931EA100FFF49E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E643F951F90FD5A00A43932 /* Assets.xcassets in Resources */,
-				0E643F981F90FD5A00A43932 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0EAB0DEA1F924FD400D3E430 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0EC518BE1F925975003000AD /* Assets.xcassets in Resources */,
-				0EAB0DF61F924FD400D3E430 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0E643F891F90FD5A00A43932 /* Sources */ = {
+		0EA2426B2F931EA100FFF49E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EB0296B1F91A9FC005F9CAC /* CGEvent+Extension.swift in Sources */,
-				0EB0296D1F91B49E005F9CAC /* CGKeyCode+Extension.swift in Sources */,
-				0E8AB8981F965B120048FA63 /* UserDefaults+Extension.swift in Sources */,
-				0E8AB89A1F965B8E0048FA63 /* UserDefaultsKeys.swift in Sources */,
-				0ED76BA81F934206007B73C9 /* ContainerView.swift in Sources */,
-				0E643F931F90FD5A00A43932 /* ViewController.swift in Sources */,
-				0E643FA31F90FD9400A43932 /* KeyboardEventService.swift in Sources */,
-				0EB029711F9201A5005F9CAC /* StatusItemManager.swift in Sources */,
-				0E643F911F90FD5A00A43932 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0EAB0DE81F924FD400D3E430 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0EAB0DEF1F924FD400D3E430 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		0E643F961F90FD5A00A43932 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E643F971F90FD5A00A43932 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0EAB0DF41F924FD400D3E430 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0EAB0DF51F924FD400D3E430 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		0E643F9B1F90FD5A00A43932 /* Debug */ = {
+		0EA242782F931EA100FFF49E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -334,20 +148,22 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -361,29 +177,33 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		0E643F9C1F90FD5A00A43932 /* Release */ = {
+		0EA242792F931EA100FFF49E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -391,20 +211,22 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -412,104 +234,97 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
 		};
-		0E643F9E1F90FD5A00A43932 /* Debug */ = {
+		0EA2427B2F931EA100FFF49E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = KanaDouble/KanaDouble.entitlements;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = KanaDouble/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.yaslab.KanaDouble;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2017 yaslab. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.yaslab.kana-double";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
-		0E643F9F1F90FD5A00A43932 /* Release */ = {
+		0EA2427C2F931EA100FFF49E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = KanaDouble/KanaDouble.entitlements;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = KanaDouble/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.yaslab.KanaDouble;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2017 yaslab. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.yaslab.kana-double";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		0EAB0DF91F924FD400D3E430 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AutoLaunchHelper/AutoLaunchHelper.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = AutoLaunchHelper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.yaslab.KanaDouble.AutoLaunchHelper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		0EAB0DFA1F924FD400D3E430 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AutoLaunchHelper/AutoLaunchHelper.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = AutoLaunchHelper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.yaslab.KanaDouble.AutoLaunchHelper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0E643F881F90FD5A00A43932 /* Build configuration list for PBXProject "KanaDouble" */ = {
+		0EA2426A2F931EA100FFF49E /* Build configuration list for PBXProject "KanaDouble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0E643F9B1F90FD5A00A43932 /* Debug */,
-				0E643F9C1F90FD5A00A43932 /* Release */,
+				0EA242782F931EA100FFF49E /* Debug */,
+				0EA242792F931EA100FFF49E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0E643F9D1F90FD5A00A43932 /* Build configuration list for PBXNativeTarget "KanaDouble" */ = {
+		0EA2427A2F931EA100FFF49E /* Build configuration list for PBXNativeTarget "KanaDouble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0E643F9E1F90FD5A00A43932 /* Debug */,
-				0E643F9F1F90FD5A00A43932 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0EAB0DFB1F924FD400D3E430 /* Build configuration list for PBXNativeTarget "AutoLaunchHelper" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0EAB0DF91F924FD400D3E430 /* Debug */,
-				0EAB0DFA1F924FD400D3E430 /* Release */,
+				0EA2427B2F931EA100FFF49E /* Debug */,
+				0EA2427C2F931EA100FFF49E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0E643F851F90FD5A00A43932 /* Project object */;
+	rootObject = 0EA242672F931EA100FFF49E /* Project object */;
 }
